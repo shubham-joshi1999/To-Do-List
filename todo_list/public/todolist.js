@@ -1,4 +1,3 @@
-
 $(function () {
 
     let newTodoBox = $('#newtodo')
@@ -15,12 +14,14 @@ $(function () {
             function (data) {
                 todoList.empty();
                 for (todo of data) {
-                    todoList.append("<li>" +todo.task+ "</li>")
+                    todoList.append("<li id = l>" +todo.task + "  " +  "<button class = btn btn-info id = deli> remove </button>" + "</li>")
                 }
             }
         )
     })
-    element.click(function(){
-        element.remove() ;  // Here only task1 is deleted as i have assiged id element to it but if i add a new element then how will i delete it.
+    let del = $('#deli')  ;
+    del.click(function()
+    {
+         l.remove() // I am trying this but this is not working
     })
 })
