@@ -4,6 +4,7 @@ $(function () {
     let newTodoBox = $('#newtodo')
     let addtodoBtn = $('#addtodo')
     let todoList = $('#todolist')
+    let element = $('#element')
 
     addtodoBtn.click(function () {
         let newTodo = newTodoBox.val()
@@ -18,5 +19,8 @@ $(function () {
                 }
             }
         )
+    })
+    element.click(function(){
+        element.remove() ;  // Here only task1 is deleted as i have assiged id element to it but if i add a new element then how will i delete it.
     })
 })
