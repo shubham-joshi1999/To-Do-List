@@ -14,14 +14,13 @@ $(function () {
             function (data) {
                 todoList.empty();
                 for (todo of data) {
-                    todoList.append("<li id = l>" +todo.task + "  " +  "<button class = btn btn-info id = deli> remove </button>" + "</li>")
+                    todoList.append('<li>' + todo.task + "  " + '<input type = "button" class = "delete" value="remove task"/></li>')
                 }
             }
         )
-    })
-    let del = $('#deli')  ;
-    del.click(function()
-    {
-         l.remove() // I am trying this but this is not working
+        $(document).on('click','.delete',function()
+        {
+            $(this).parent().remove() ; 
+        })
     })
 })
